@@ -16,11 +16,19 @@ const sequelize = new Sequelize('groupomania', USERNAME, PSWD, {
 const User = UserModel(sequelize, Sequelize)
 const Post = PostModel(sequelize, Sequelize)
 
+Post.belongsTo(User, {
+   onDelete: ' NO ACTION',
+})
+User.hasMany(Post, {
+  foreignKey: 'userId',
+  onDelete: 'CASCADE'
+})
+
 sequelize.authenticate()
   .then(() => console.log('Database connexion correct'))
   .catch((error) => console.log(`Database connexion not complete: ${error}`))
 
-sequelize.sync()
+sequelize.sync({ alter: true })
   .then(() => console.log('Tables created and/or uptaded with models!'))
   .catch((error) => console.log(`Oops, something went wrong with updating tables: ${error}`))
 
