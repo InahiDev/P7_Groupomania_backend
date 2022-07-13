@@ -77,12 +77,13 @@ exports.likeStatus = (req, res) => {
   const postId = req.params.id
   const userId = req.userId
   Post.findOne({ where: { id: postId }})
-    .then(post => {
-      if (post) {
-        let likes = post.dataValues.likes
-        let dislikes = post.dataValues.dislikes
-        let usersLiked = post.dataValues.usersLiked
-        let usersDisliked = post.dataValues.usersDisliked
+    .then(data => {
+      if (data) {
+        let post = data.dataValues
+        let likes = post.likes
+        let dislikes = post.dislikes
+        let usersLiked = post.usersLiked
+        let usersDisliked = post.usersDisliked
         switch (req.body.like) {
           case 1:
             if (!usersLiked.includes(userId)) {
