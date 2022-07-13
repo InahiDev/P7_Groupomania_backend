@@ -17,7 +17,7 @@ const User = UserModel(sequelize, Sequelize)
 const Post = PostModel(sequelize, Sequelize)
 
 Post.belongsTo(User, {
-   onDelete: ' NO ACTION',
+   onDelete: 'NO ACTION',
 })
 User.hasMany(Post, {
   foreignKey: 'userId',
@@ -28,10 +28,8 @@ sequelize.authenticate()
   .then(() => console.log('Database connexion correct'))
   .catch((error) => console.log(`Database connexion not complete: ${error}`))
 
-sequelize.sync({ alter: true })
+sequelize.sync()
   .then(() => console.log('Tables created and/or uptaded with models!'))
   .catch((error) => console.log(`Oops, something went wrong with updating tables: ${error}`))
 
-// module.exports = User
-// module.exports = Post
-module.exports = sequelize
+module.exports = { User, Post }

@@ -1,17 +1,12 @@
-const sequelize = require('../sequelize')
-const Sequelize = require('sequelize')
+const { User } = require('../sequelize')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const validator = require('validator')
 const TOKEN_KEY = process.env.TOKEN_KEY
-const UserModel = require('../models/User')
-const PostModel = require('../models/Post')
-
-const User = UserModel(sequelize, Sequelize)
 
 module.exports.signup = (req, res) => {
   if (req.body.isAdmin === true) {
-    return res.status(403).json({ message: "You cannot give you admin right on this application yourself"})
+    return res.status(403).json({ message: "You cannot give yourself admin rights on this application!"})
   }
   if(validator.isEmail(req.body.email)) {
     User.findAll({ where: { email: req.body.email }})

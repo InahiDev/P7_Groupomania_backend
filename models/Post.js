@@ -24,8 +24,8 @@ module.exports = (sequelize, type) => {
       allowNull: false,
       defaultValue: 0
     },
-    usersLiked: {
-      type: type. JSON,
+    usersLiked: {       //Avec des BDD SQL il est plus simple est préférable d'utiliser des tables de relations Many to Many pour effectuer ce travail
+      type: type.JSON,
       allowNull: false,
       defaultValue: [],
       get() {
@@ -36,7 +36,7 @@ module.exports = (sequelize, type) => {
       }
     },
     usersDisliked: {
-      type: type. JSON,
+      type: type.JSON,
       allowNull: false,
       defaultValue: [],
       get() {
