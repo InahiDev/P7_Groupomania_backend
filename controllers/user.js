@@ -48,11 +48,12 @@ exports.login = (req, res) => {
               } else {
                 res.status(200).json({
                   userId: user.id,
+                  isAdmin: user.isAdmin,
                   token: jwt.sign(
                     { userId: user.id,
                     isAdmin: user.isAdmin },
                     TOKEN_KEY,
-                    { expiresIn: '3h' } /*demandé par les spécifications, mais attention sécurité!*/
+                    { expiresIn: '3h' } /*demandé par les spécifications en token "infini", mais attention sécurité!*/
                   )
                 })
               }
@@ -61,6 +62,24 @@ exports.login = (req, res) => {
         }
       })
       .catch((error) => res.status(500).json({ message: `Oops something went wrong while finding you in the DB ${error}`}))
+  } else {
+    res.status(400).json({ message: "That's not an email buddy!"})
+  }
+}
+
+exports.unsubscribe = (req, res) => {
+  if (validator.isEmail(req.body.email)) {
+    User.findAll({ where: { id: req.userId }})
+      .then((data) => {
+        if (data.length === 0) {
+          res.status(404).json({ message: "There is no account in the DB with this mail to delete!"})
+        } else {
+          User.destroy({ where: { id: data[0].dataValues.id }})
+            .then(() => res.status(204).json({ message: "User and related posts destroyed!"}))
+            .catch((error) => res.status(500).json({ message : `Oops something went wrong while during the account deletion in the DB ${error}`}))
+        }
+      })
+      .catch((error) => res.status(500).json({ message : `Oops something went wrong while finding the account in the DB ${error}`}) )
   } else {
     res.status(400).json({ message: "That's not an email buddy!"})
   }

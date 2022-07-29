@@ -17,11 +17,11 @@ const User = UserModel(sequelize, Sequelize)
 const Post = PostModel(sequelize, Sequelize)
 
 Post.belongsTo(User, {
-   onDelete: 'NO ACTION',
+   onDelete: 'CASCADE',
 })
 User.hasMany(Post, {
   foreignKey: 'userId',
-  onDelete: 'CASCADE'
+  onDelete: 'NO ACTION'
 })
 
 sequelize.authenticate()

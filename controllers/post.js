@@ -10,6 +10,7 @@ exports.getPosts = (req, res) => {
 
 exports.createPost = (req, res) => {
   if (req.file) {
+    console.log(req.body)
     const postObject = JSON.parse(req.body.post)
     const post = new Post({
       text: postObject.text,

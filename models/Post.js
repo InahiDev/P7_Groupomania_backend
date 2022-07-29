@@ -51,7 +51,9 @@ module.exports = (sequelize, type) => {
       allowNull: false,
       references: {
         model: 'users',
-        key: 'id'
+        key: 'id',
+        onUpdate: 'NO ACTION',
+        onDelete: 'CASCADE'
       }
     }
   })
