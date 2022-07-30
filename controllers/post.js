@@ -8,6 +8,16 @@ exports.getPosts = (req, res) => {
     .catch((error) => res.status(500).json({ message: `Oops, something went wrong while finding all the posts: ${error}`}))
 }
 
+exports.getOnePost = (req, res) => {
+  Post.findOne({ where: { id: req.params.id }})
+    .then(data => {
+      const post = data.dataValues
+      console.log(post)
+      res.status(200).json({post})
+    })
+    .catch((error) => res.status(404).json({ message: `Oops, something went wrong while finding this post: ${error}`}))
+}
+
 exports.createPost = (req, res) => {
   if (req.file) {
     console.log(req.body)
