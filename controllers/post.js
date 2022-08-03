@@ -12,7 +12,6 @@ exports.getOnePost = (req, res) => {
   Post.findOne({ where: { id: req.params.id }})
     .then(data => {
       const post = data.dataValues
-      console.log(post)
       res.status(200).json({post})
     })
     .catch((error) => res.status(404).json({ message: `Oops, something went wrong while finding this post: ${error}`}))
@@ -20,7 +19,6 @@ exports.getOnePost = (req, res) => {
 
 exports.createPost = (req, res) => {
   if (req.file) {
-    console.log(req.body)
     const postObject = JSON.parse(req.body.post)
     const post = new Post({
       text: postObject.text,
