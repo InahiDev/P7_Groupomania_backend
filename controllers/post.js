@@ -26,7 +26,7 @@ exports.createPost = (req, res) => {
       userId: req.userId
     })
     post.save()
-      .then(() => res.status(201).json({ message: "Post created with image linked!"}))
+      .then((data) => res.status(201).json({ message: "Post created with image linked!", data: data.dataValues }))
       .catch((error) => res.status(500).json({ message: `Oops something went wrong in registring your post with image in the DataBase: ${error}`}))
   } else {
     const post = new Post({
@@ -35,7 +35,7 @@ exports.createPost = (req, res) => {
       userId: req.userId
     })
     post.save()
-      .then(() => res.status(201). json({ message: "Post Created"}))
+      .then((data) => res.status(201). json({ message: "Post Created", data: data.dataValues }))
       .catch((error) => res.status(500).json({ message: `Oops something went wrong registering your post without image in the DataBase: ${error}`}))
   }
   
