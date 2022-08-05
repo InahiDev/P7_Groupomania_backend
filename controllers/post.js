@@ -45,7 +45,7 @@ exports.updatePost = (req, res) => {
   Post.findOne({ where: { id: req.params.id }})
     .then(data => {
       const post = data.dataValues
-      if (req.userId === post.userId || res.isAdmin === true) {
+      if (req.userId === post.userId || req.isAdmin === true) {
         if (req.file) {
           handleUpdateWithImage(req, res, post)
         } else {
