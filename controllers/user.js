@@ -67,6 +67,18 @@ exports.login = (req, res) => {
   }
 }
 
+exports.relog = (req, res) => {
+  User.findAll({ where: { id: req.userId }})
+    .then((data) => {
+      if (data.length === 0) {
+        res.status(404).json({ message: "There is no account with the identifier sent"})
+      } else {
+        res.status(200).json({ message: "Relog succesfull", data: data[0].dataValues })
+      }
+    })
+    .catch((error) => res.status(500).json({ message: `Oops, something went wrong while relogging to your account: ${error}`}))
+}
+
 exports.unsubscribe = (req, res) => {
   if (validator.isEmail(req.body.email)) {
     User.findAll({ where: { id: req.userId }})
