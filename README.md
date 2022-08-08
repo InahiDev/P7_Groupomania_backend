@@ -24,7 +24,6 @@ The console will ensure you the port by displaying the port is listening on. The
 ### User Routes
 
 Before using the entire API, you have to create an account. The routes in charge of account creation, loging and account deletion or reachable at the path ```/api/auth``` & each endpoints are :</br>
-</br>
 
 #### Endpoints :
 ```/signup``` for creation (POST)</br>
