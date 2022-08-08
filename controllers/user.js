@@ -73,7 +73,12 @@ exports.relog = (req, res) => {
       if (data.length === 0) {
         res.status(404).json({ message: "There is no account with the identifier sent"})
       } else {
-        res.status(200).json({ message: "Relog succesfull", data: data[0].dataValues })
+        res.status(200).json({ message: "Relog succesfull", data: {
+          userId: data[0].dataValues.id,
+          isAdmin: data[0].dataValues.isAdmin,
+          email: data[0].dataValues.email,
+          token: req.headers.authorization.split(' ')[1]
+        }})
       }
     })
     .catch((error) => res.status(500).json({ message: `Oops, something went wrong while relogging to your account: ${error}`}))
