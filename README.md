@@ -37,9 +37,9 @@ All CRUD operations are settled in the post routes reachable at the path /api/po
 
 #### Endpoints:
 
-'/' to get all posts (GET)</br>
-'/:id' to get the targeted post (GET)</br>
-'/' for creation (POST)</br>
-'/:id' to update the targeted post (PUT)</br>
-'/:id' to delete the targeted post (DELETE)</br>
-'/:id/like' to set the like status of the account owner (POST)</br>
+```/``` to get all posts (GET)</br>
+```/:id``` to get the targeted post (GET)</br>
+```/``` for creation (POST)</br>
+```/:id``` to update the targeted post (PUT)</br>
+```/:id``` to delete the targeted post (DELETE)</br>
+```/:id/like``` to set the like status of the account owner (POST)</br>
