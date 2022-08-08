@@ -29,7 +29,7 @@ Before using the entire API, you have to create an account. The routes in charge
 ```/login``` for login (POST)</br>
 ```/unsubscribe``` for account deletion (DELETE)</br>
 </br>
-Once loged in, the server will give you back a token ancrypting your user ID (UUIDv4), your role (admin or not). This token will allow you to access the rest of the API.</br>
+Once loged in, the server will give you back a token ancrypting your user ID (UUIDv4), your role (admin or not). This token will allow you access to the rest of the API.</br>
 
 ### Post routes.
 
