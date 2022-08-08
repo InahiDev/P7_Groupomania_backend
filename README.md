@@ -6,20 +6,36 @@ You will need to have Node, npm and MySQL workbench installed locally on your ma
 
 ## Backend installation
 
+abcdefghijklmnopqrstuvwxyz
 If you have not yet cloned the repo, clone it using 
 ``` git clone https://github.com/InahiDev/P7_Groupomania_backend ```
 
-The DataBase is using MySQL for language and Sequelize as ORM.</br>
-You can configure your username & password in the file /backend/sequelize.js in both const USERNAME and const PSWD.
-For the migration of the DataBase, run</br>
-``` sequelize db:create && sequelize db:migrate ```</br>
-The default port of the DB should be 3306, if not, check it on MySQL Workbench and you can change it in the const DB_PORT.
+The DataBase is basically using MySQL for language and Sequelize as ORM.</br>
 
-You should now run npm install in the terminal.</br>
+For the migration of the DataBase, go on MySQL Workbench and select Administration > Data Import/Restore</br>
+Select option "Import from Self-Contained File" and indicate the groupomania.sql file located in the root directory</br>
+
+You should now run ```npm install``` in the terminal. It will install dependecies and package the server needs.</br>
+
+### Dotenv variables
+The entire project uses environmental variables in order to pass some informations and configure interactions.</br>
+You can configure your username & password in the file /backend/sequelize.js directly or use .env file to set these.</br>
+
+Your username should be saved in ```DB_USERNAME```</br>
+The password related to it should be saved in ```DB_PSWD```</br>
+The port where your database is running should be saved in ```DB_PORT```</br> The default port of the DB should be 3306, if not, check it on MySQL Workbench and you can change it in the .env file.
+The dialect for configuration is saved under ```DB_DIALECT```</br>
+The port you want your server to run on, is settled by the environment variable ```PORT```</br
+The last environment variable you should set up is the encryption key for the token system of authentification. This value is set in ```TOKEN_KEY```</br>
+
+## Starting server
+
 You now can run npm run start, nodemon server (if correctly installed) or just node server. The server should now run on localhost with port set on 3000.</br>
 The console will ensure you the port by displaying the port is listening on. The backend server should now run on the port 3000 by default.
 
 ## Routes and Authentification
+
+
 
 ### User Routes
 
