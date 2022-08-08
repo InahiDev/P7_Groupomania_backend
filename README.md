@@ -25,6 +25,8 @@ The console will ensure you the port by displaying the port is listening on. The
 
 Before using the entire API, you have to create an account. The routes in charge of account creation, loging and account deletion or reachable at the path ```/api/auth``` & each endpoints are :</br>
 </br>
+
+#### Endpoints :
 ```/signup``` for creation (POST)</br>
 ```/login``` for login (POST)</br>
 ```/unsubscribe``` for account deletion (DELETE)</br>
@@ -35,7 +37,7 @@ Once loged in, the server will give you back a token ancrypting your user ID (UU
 
 All CRUD operations are settled in the post routes reachable at the path ```/api/post``` & each enpoints are :</br>
 
-#### Endpoints:
+#### Endpoints :
 
 ```/``` to get all posts (GET)</br>
 ```/:id``` to get the targeted post (GET)</br>
