@@ -23,17 +23,17 @@ The console will ensure you the port by displaying the port is listening on. The
 
 ### User Routes
 
-Before using the entire API, you have to create an account. The routes in charge of account creation, loging and account deletion or reachable at the path /api/auth & each endpoint is:</br>
+Before using the entire API, you have to create an account. The routes in charge of account creation, loging and account deletion or reachable at the path ```/api/auth``` & each endpoints are :</br>
 </br>
-/signup for creation (POST)</br>
-/login for login (POST)</br>
-/unsubscribe for account deletion (DELETE)</br>
+```/signup``` for creation (POST)</br>
+```/login``` for login (POST)</br>
+```/unsubscribe``` for account deletion (DELETE)</br>
 </br>
 Once loged in, the server will give you back a token ancrypting your user ID (UUIDv4), your role (admin or not). This token will allow you to access the rest of the API.</br>
 
 ### Post routes.
 
-All CRUD operations are settled in the post routes reachable at the path /api/post</br>
+All CRUD operations are settled in the post routes reachable at the path ```/api/post``` & each enpoints are :</br>
 
 #### Endpoints:
 
