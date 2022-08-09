@@ -6,14 +6,13 @@ You will need to have Node, npm and MySQL workbench installed locally on your ma
 
 ## Backend installation
 
-abcdefghijklmnopqrstuvwxyz
 If you have not yet cloned the repo, clone it using 
 ``` git clone https://github.com/InahiDev/P7_Groupomania_backend ```
 
 The DataBase is basically using MySQL for language and Sequelize as ORM.</br>
 
 For the migration of the DataBase, go on MySQL Workbench and select Administration > Data Import/Restore</br>
-Select option "Import from Self-Contained File" and indicate the groupomania.sql file located in the root directory</br>
+Select option "Import from Self-Contained File" and select the groupomania.sql file located in the root directory</br>
 
 You should now run ```npm install``` in the terminal. It will install dependecies and package the server needs.</br>
 
