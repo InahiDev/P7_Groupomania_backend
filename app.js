@@ -23,7 +23,10 @@ app.use(express.json())
 
 app.use('/images', express.static(path.join(__dirname, 'images')))
 app.use(cors())
-app.use(helmet({crossOriginEmbedderPolicy: false}))
+app.use(helmet({
+  crossOriginEmbedderPolicy: false,
+  crossOriginResourcePolicy: false
+}))
 app.use(limiter)
 
 app.use('/api/auth', userRoutes)
