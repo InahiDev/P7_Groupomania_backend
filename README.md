@@ -43,6 +43,7 @@ Before using the entire API, you have to create an account. The routes in charge
 #### Endpoints :
 ```/signup``` for creation (POST)</br>
 ```/login``` for login (POST)</br>
+```/relog``` for relog (POST)</br>
 ```/unsubscribe``` for account deletion (DELETE)</br>
 </br>
 Once loged in, the server will give you back a token ancrypting your user ID (UUIDv4), your role (admin or not). This token will allow you access to the rest of the API.</br>
