@@ -38,7 +38,7 @@ The console will ensure you the port by displaying "Listening on port XXXX". The
 
 ### User Routes
 
-Before using the entire API, you have to create an account. The routes in charge of account creation, loging and account deletion or reachable at the path ```/api/auth``` & each endpoints are :</br>
+Before using the entire API, you have to create an account. The routes in charge of account creation, loging and account deletion are reachable at the path ```/api/auth``` & each endpoints are :</br>
 
 #### Endpoints :
 ```/signup``` for creation (POST)</br>
@@ -46,7 +46,7 @@ Before using the entire API, you have to create an account. The routes in charge
 ```/relog``` for relog (POST)</br>
 ```/unsubscribe``` for account deletion (DELETE)</br>
 </br>
-Once loged in, the server will give you back a token ancrypting your user ID (UUIDv4), your role (admin or not). This token will allow you access to the rest of the API.</br>
+Once loged in, the server will give you back a token encrypting your user ID (UUIDv4), your role (admin or not). This token will allow you access to the rest of the API.</br>
 
 ### Post routes.
 
