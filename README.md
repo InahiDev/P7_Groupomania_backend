@@ -24,13 +24,13 @@ Your username should be saved in ```DB_USERNAME```</br>
 The password related to it should be saved in ```DB_PSWD```</br>
 The port where your database is running should be saved in ```DB_PORT```</br> The default port of the DB should be 3306, if not, check it on MySQL Workbench and you can change it in the .env file.
 The dialect for configuration is saved under ```DB_DIALECT```</br>
-The port you want your server to run on, is settled by the environment variable ```PORT```</br
+The port you want your server to run on, is settled by the environment variable ```PORT```</br>
 The last environment variable you should set up is the encryption key for the token system of authentification. This value is set in ```TOKEN_KEY```</br>
 
 ## Starting server
 
 You now can run npm run start, nodemon server (if correctly installed) or just node server. The server should now run on localhost with port set on 3000.</br>
-The console will ensure you the port by displaying the port is listening on. The backend server should now run on the port 3000 by default.
+The console will ensure you the port by displaying "Listening on port XXXX". The backend server should now run on the port 3000 by default.
 
 ## Routes and Authentification
 
