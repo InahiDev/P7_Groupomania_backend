@@ -12,7 +12,7 @@ If you have not yet cloned the repo, clone it using
 The DataBase is basically using MySQL for language and Sequelize as ORM.</br>
 
 For the migration of the DataBase, go on MySQL Workbench and select Administration > Data Import/Restore</br>
-Select option "Import from Self-Contained File" and select the groupomania.sql file located in the root directory</br>
+Select option "Import from Self-Contained File" and select the groupomania.sql file located in the backend directory</br>
 
 You should now run ```npm install``` in the terminal. It will install dependecies and package the server needs.</br>
 
@@ -38,14 +38,15 @@ The console will ensure you the port by displaying "Listening on port XXXX". The
 
 ### User Routes
 
-Before using the entire API, you have to create an account. The routes in charge of account creation, loging and account deletion or reachable at the path ```/api/auth``` & each endpoints are :</br>
+Before using the entire API, you have to create an account. The routes in charge of account creation, loging and account deletion are reachable at the path ```/api/auth``` & each endpoints are :</br>
 
 #### Endpoints :
 ```/signup``` for creation (POST)</br>
 ```/login``` for login (POST)</br>
+```/relog``` for relog (POST)</br>
 ```/unsubscribe``` for account deletion (DELETE)</br>
 </br>
-Once loged in, the server will give you back a token ancrypting your user ID (UUIDv4), your role (admin or not). This token will allow you access to the rest of the API.</br>
+Once loged in, the server will give you back a token encrypting your user ID (UUIDv4), your role (admin or not). This token will allow you access to the rest of the API.</br>
 
 ### Post routes.
 
